@@ -6,6 +6,7 @@ import Files from '../pages/Files.vue'
 import History from '../pages/History.vue'
 import Timelapse from '../pages/Timelapse.vue'
 import Machine from '../pages/Machine.vue'
+import CNC from '../pages/CNC.vue'
 import { AsyncComponent, Component } from 'vue'
 
 import {
@@ -18,6 +19,7 @@ import {
     mdiHistory,
     mdiTimelapse,
     mdiWrench,
+    mdiHammer,
 } from '@mdi/js'
 
 const routes: AppRoute[] = [
@@ -51,6 +53,18 @@ const routes: AppRoute[] = [
         fullscreen: true,
     },
     {
+        name: 'cnc',
+        title: 'CNC',
+        path: '/cnc',
+        icon: mdiHammer,
+        component: CNC,
+        alwaysShow: true,
+        showInNavi: true,
+        klipperIsConnected: true,
+        moonrakerComponent: 'cnc',
+        position: 35,
+    },
+    {
         name: 'console',
         title: 'Console',
         path: '/console',
@@ -59,7 +73,7 @@ const routes: AppRoute[] = [
         alwaysShow: true,
         showInNavi: true,
         klipperIsConnected: true,
-        position: 30,
+        position: 40,
     },
     {
         name: 'heightmap',
@@ -70,7 +84,7 @@ const routes: AppRoute[] = [
         alwaysShow: false,
         showInNavi: true,
         klipperComponent: 'bed_mesh',
-        position: 40,
+        position: 50,
     },
     {
         name: 'gcodefiles',
@@ -81,7 +95,7 @@ const routes: AppRoute[] = [
         alwaysShow: true,
         showInNavi: true,
         registeredDirectory: 'gcodes',
-        position: 50,
+        position: 60,
         fullscreen: true,
     },
     {
@@ -92,7 +106,7 @@ const routes: AppRoute[] = [
         component: () => import('../pages/Viewer.vue'),
         alwaysShow: true,
         showInNavi: true,
-        position: 60,
+        position: 70,
         fullscreen: true,
     },
     {
@@ -104,7 +118,7 @@ const routes: AppRoute[] = [
         alwaysShow: true,
         showInNavi: true,
         moonrakerComponent: 'history',
-        position: 70,
+        position: 80,
     },
     {
         name: 'timelapse',
@@ -115,7 +129,7 @@ const routes: AppRoute[] = [
         alwaysShow: true,
         showInNavi: true,
         moonrakerComponent: 'timelapse',
-        position: 80,
+        position: 90,
     },
     {
         name: 'machine',
@@ -125,7 +139,7 @@ const routes: AppRoute[] = [
         component: Machine,
         alwaysShow: true,
         showInNavi: true,
-        position: 90,
+        position: 100,
     },
     {
         title: null,
